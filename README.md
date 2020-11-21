@@ -1,4 +1,4 @@
-## 10-SQLAlchemy Homework!    [](/smaller_surfs-up.png)
+## 10-SQLAlchemy Homework!    [](smaller_surfs-up.png)
 ## SQLAlchemy-Challenge!    [](/HW/Instructions/Images/sqlalchemyImage.jpg)
  * **Input file** - located within Resources folder, hawaii.sqlite
  * **Output CSV data** - within data analysis [output](/output) folder
