@@ -1,12 +1,12 @@
 ## 10-SQLAlchemy Homework![](/smaller_sufts-up.png)
-## SQLAlchemy-Challenge![](/sqlalchemyImage.jpg)
+## SQLAlchemy-Challenge![](/HW/Images/sqlalchemyImage.jpg)
  * **Input file** - located within Resources folder, hawaii.sqlite
  * **Output CSV data** - within data analysis [output](/output) folder
  * **Assignment material** - located within [HW](/HW) folder.
 
 Use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 
-* Use the provided [starter notebook](climate_starter.ipynb) and [hawaii.sqlite](Resources/hawaii.sqlite) files to complete your climate analysis and data exploration.
+* Use the provided [starter notebook](\HW\Instructions\) and [hawaii.sqlite](Resources/) files to complete your climate analysis and data exploration.
 
 * Choose a start date and end date for your trip. Make sure that your vacation range is approximately 3-15 days total.
 
@@ -26,7 +26,7 @@ Use Python and SQLAlchemy to do basic climate analysis and data exploration of y
 
 * Plot the results using the DataFrame `plot` method.
 
-  ![precipitation](Images/precipitation.png)
+  ![precipitation](/HW/Images/precipitation.png)
 
 * Use Pandas to print the summary statistics for the precipitation data.
 
@@ -48,7 +48,7 @@ Use Python and SQLAlchemy to do basic climate analysis and data exploration of y
 
   * Plot the results as a histogram with `bins=12`.
 
-    ![station-histogram](Images/station-histogram.png)
+    ![station-histogram](/HW/Images/station-histogram.png)
 
 - - -
 
