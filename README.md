@@ -1,5 +1,5 @@
-## 10-SQLAlchemy Homework![](/smaller_sufts-up.png)
-## SQLAlchemy-Challenge![](/HW/Images/sqlalchemyImage.jpg)
+## 10-SQLAlchemy Homework![](/smaller_surfs-up.png)
+## SQLAlchemy-Challenge![](/HW/Instructions/Images/sqlalchemyImage.jpg)
  * **Input file** - located within Resources folder, hawaii.sqlite
  * **Output CSV data** - within data analysis [output](/output) folder
  * **Assignment material** - located within [HW](/HW) folder.
@@ -26,7 +26,7 @@ Use Python and SQLAlchemy to do basic climate analysis and data exploration of y
 
 * Plot the results using the DataFrame `plot` method.
 
-  ![precipitation](/HW/Images/precipitation.png)
+  ![precipitation](/HW//Instructions/Images/precipitation.png)
 
 * Use Pandas to print the summary statistics for the precipitation data.
 
@@ -48,7 +48,7 @@ Use Python and SQLAlchemy to do basic climate analysis and data exploration of y
 
   * Plot the results as a histogram with `bins=12`.
 
-    ![station-histogram](/HW/Images/station-histogram.png)
+    ![station-histogram](/HW/Instructions/Images/station-histogram.png)
 
 - - -
 
@@ -141,6 +141,3 @@ Now that you have completed your initial analysis, design a Flask API based on t
 
   ![daily-normals](Images/daily-normals.png)
 
-### Copyright
-
-Trilogy Education Services © 2020. All Rights Reserved.
