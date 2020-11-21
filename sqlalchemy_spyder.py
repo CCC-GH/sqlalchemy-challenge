@@ -59,7 +59,7 @@ plt.title('Precipitation', fontsize=14)
 plt.ylabel('Inches', fontsize=11)
 plt.xlabel('Date', fontsize=11)
 plt.legend('')
-chart.savefig('Output/PrecipitationLast12m.png')
+chart.savefig('Output/Precipitation_Last12m.png')
 plt.show()
 
 # Use Pandas to calcualte the summary statistics for the precipitation data
