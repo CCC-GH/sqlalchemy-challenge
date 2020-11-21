@@ -17,6 +17,7 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
+# Establish DBAPI connection
 engine = create_engine('sqlite:///./Resources/hawaii.sqlite')
 
 # reflect an existing database into a new model
@@ -34,8 +35,6 @@ station = base.classes.station
 
 # Create our session (link) from Python to the DB
 session = Session(engine)
-
-# Exploratory Climate Analysis
 
 # Design a query to retrieve the last 12 months of precipitation data and plot the results
 lastDate = session.query(measurement.date).order_by(measurement.date.desc()).first().date
@@ -58,6 +57,7 @@ chart = precip_df.plot().get_figure()
 plt.title('Precipitation', fontsize=14)
 plt.ylabel('Inches', fontsize=11)
 plt.xlabel('Date', fontsize=11)
+plt.xticks(rotation=45)
 plt.legend('')
 chart.savefig('Output/Precipitation_Last12m.png')
 plt.show()
@@ -88,18 +88,11 @@ print('\033[1mStation      Counts\033[0m')
 for ActiveStationsDesc in ActiveStationsDesc:
     print(ActiveStationsDesc[0], '  ', ActiveStationsDesc[1])
 
-#stationActive = session.query(Measurement.station, func.count(Measurement.station)).\
-#group_by(Measurement.station).\
-#order_by(func.count(Measurement.station).\
-#desc()).\
-#all()
-#stationActive
-
 # Using the station id from the previous query, calculate the lowest temperature recorded, 
 # highest temperature recorded, and average temperature of the most active station?
 tempFreq = session.query(func.min(measurement.tobs), func.max(measurement.tobs), func.avg(measurement.tobs)).\
     filter(measurement.station == mostActiveStation).all()
-print('Lowest, highest and average temperatures:')
+print('\nLowest, highest and average temperatures:')
 print(f'\033[1mLow:\033[0m {tempFreq[0][0]}')
 print(f'\033[1mHigh:\033[0m {tempFreq[0][1]}')
 print(f'\033[1mAvg:\033[0m {round(tempFreq[0][2],2)}')
