@@ -1,6 +1,7 @@
 ## 10-SQLAlchemy Homework 
 ![](smaller_surfs-up.png)
 ## SQLAlchemy-Challenge 
+ * **Scripts** - ***sqlalchemy_jupyter.ipynb*** or ***sqlalchemy_spyder.py***
  * **Input file** - located within Resources folder, hawaii.sqlite
  * **Output images** - within data analysis [output](/output) folder
  * **Assignment material** - located within [HW](/HW) folder.
