@@ -54,12 +54,12 @@ precip_df.set_index('Date', inplace=True)
 # Sort the dataframe by date
 # Use Pandas Plotting with Matplotlib to plot the data
 chart = precip_df.plot().get_figure()
-plt.title('Precipitation', fontsize=14)
+plt.title('Last 12 Month Precipitation', fontsize=14)
 plt.ylabel('Inches', fontsize=11)
 plt.xlabel('Date', fontsize=11)
 plt.xticks(rotation=45)
-plt.legend('')
-chart.savefig('Output/Precipitation_Last12m.png')
+plt.legend(loc='upper right')
+chart.savefig('Output/Precipitation_Last12m.png', bbox_inches='tight')
 plt.show()
 
 # Use Pandas to calcualte the summary statistics for the precipitation data
@@ -82,8 +82,7 @@ for loc in stationLocs:
 print(f'\033[1mMost active is:\033[0m {mostActiveStationName}')
 print(f'\033[1mStation:\033[0m {ActiveStationsDesc[0][0]}')
 print(f'\033[1mCount:\033[0m {ActiveStationsDesc[0][1]}')
-print('')
-print('Stations by descending order counts:')
+print('\nStations by descending order counts:')
 print('\033[1mStation      Counts\033[0m')
 for ActiveStationsDesc in ActiveStationsDesc:
     print(ActiveStationsDesc[0], '  ', ActiveStationsDesc[1])
@@ -102,14 +101,12 @@ print(f'\033[1mAvg:\033[0m {round(tempFreq[0][2],2)}')
 temp = session.query(measurement.date, measurement.tobs).\
     filter(measurement.station == mostActiveStation).filter(measurement.date >= lastYear).\
     group_by(measurement.date).all()
-
 temp_df = pd.DataFrame(data=temp, columns=['date', 'tobs'])
 temp_df = temp_df.set_index('date', drop=True)
-
 plt.hist(temp_df['tobs'], 12)
 plt.title(f'{mostActiveStationName} (most active)', fontsize=14)
 plt.ylabel('Frequency', fontsize=11)
 plt.xlabel('Temperature', fontsize=11)
-plt.legend()
 plt.savefig('output/TempActiveStation_Last12m.png')
+plt.legend(['TOBS'], loc='upper right')
 plt.show()
