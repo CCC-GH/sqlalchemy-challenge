@@ -7,10 +7,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 import datetime as dt
-#import calendar
 
 # Reflect Tables into SQLAlchemy ORM
-
 # Python SQL toolkit and Object Relational Mapper
 #import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
@@ -53,8 +51,8 @@ precip_df.set_index('Date', inplace=True)
 
 # Sort the dataframe by date
 # Use Pandas Plotting with Matplotlib to plot the data
-chart = precip_df.plot().get_figure()
-plt.title('Last 12 Month Precipitation', fontsize=14)
+chart = precip_df.plot(figsize=(10,4)).get_figure()
+plt.title('Last 12 Month Precipitation from all Stations', fontsize=14)
 plt.ylabel('Inches', fontsize=11)
 plt.xlabel('Date', fontsize=11)
 plt.xticks(rotation=45)
@@ -103,7 +101,7 @@ temp = session.query(measurement.date, measurement.tobs).\
     group_by(measurement.date).all()
 temp_df = pd.DataFrame(data=temp, columns=['date', 'tobs'])
 temp_df = temp_df.set_index('date', drop=True)
-plt.hist(temp_df['tobs'], 12)
+plt.hist(temp_df['tobs'], bins=12)
 plt.title(f'{mostActiveStationName} (most active)', fontsize=14)
 plt.ylabel('Frequency', fontsize=11)
 plt.xlabel('Temperature', fontsize=11)
