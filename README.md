@@ -2,7 +2,7 @@
 ![](smaller_surfs-up.png)
 ## SQLAlchemy-Challenge 
  * **Input file** - located within Resources folder, hawaii.sqlite
- * **Output CSV data** - within data analysis [output](/output) folder
+ * **Output images** - within data analysis [output](/output) folder
  * **Assignment material** - located within [HW](/HW) folder.
 
 Use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
