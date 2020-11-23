@@ -1,13 +1,10 @@
 import numpy as np
 import pandas as pd
 import datetime as dt
-
 # Python SQL toolkit and Object Relational Mapper
-#import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
-
 from flask import Flask, jsonify
 # Establish DBAPI connection
 engine = create_engine('sqlite:///./Resources/hawaii.sqlite')
@@ -17,11 +14,9 @@ station = base.classes.station
 measurement = base.classes.measurement
 session = Session(engine)
 app = Flask(__name__)
-app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
-
 # List all routes that are available
 @app.route('/')
-def Home():
+def home():
     return (
         f'Available Routes:<br/>'
         f'<br/>'
@@ -43,12 +38,10 @@ def Home():
 # Return the query results as a dictionary, with date as the key and prcp as the value.
 @app.route('/api/v1.0/precipitation')
 def prcp():
-    last_date = session.query(measurement.date).order_by(measurement.date.desc()).first()
     last_year = dt.date(2017, 8, 24) - dt.timedelta(days=365)
     rain = session.query(measurement.date, measurement.prcp).\
         filter(measurement.date > last_year).\
         order_by(measurement.date).all()
-
     prcp_totals = []
     for result in rain:
         row = {}
@@ -56,19 +49,17 @@ def prcp():
         row['prcp'] = rain[1]
         prcp_totals.append(row)
     return jsonify(prcp_totals)
-
 # Return a JSON dictionary of stations from the dataset.
 @app.route('/api/v1.0/stations')
 def stations():
     stations_query = session.query(station.name, station.station)
     stations = pd.read_sql(stations_query.statement, stations_query.session.bind)
     return jsonify(stations.to_dict())
-    
 # Return a JSON list of temperature observations (TOBS) for the previous year.
 @app.route('/api/v1.0/tobs')
 def tobs():
    # last_date = session.query(measurement.date).order_by(measurement.date.desc()).first()
-    last_year = dt.date(2017, 8, 23) - dt.timedelta(days=365)
+    last_year = dt.date(2017, 8, 24) - dt.timedelta(days=365)
     temperature = session.query(measurement.date, measurement.tobs).\
         filter(measurement.date > last_year).\
         order_by(measurement.date).all()
@@ -79,7 +70,6 @@ def tobs():
         row['tobs'] = temperature[1]
         tobs_yr.append(row)
     return jsonify(tobs_yr)
-
 # Return a JSON list of the minimum, average, and max temperature after a given start date.
 @app.route('/api/v1.0/<start>')
 def start(start):
@@ -91,10 +81,9 @@ def start(start):
         filter(measurement.date >= start).filter(measurement.date <= end).all()
     trip = list(np.ravel(trip_data))
     return jsonify(trip)
-
 # Return a JSON list of the minimum, average, and max temperature between a given start-end range (inclusive).
 @app.route('/api/v1.0/<start>/<end>')
-def End(start, end):
+def end(start, end):
     start_date= dt.datetime.strptime(start, '%Y-%m-%d')
     end_date= dt.datetime.strptime(end,'%Y-%m-%d')
     last_year = dt.timedelta(days=365)
