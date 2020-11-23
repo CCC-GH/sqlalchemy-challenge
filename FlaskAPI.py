@@ -21,19 +21,19 @@ def home():
         f'Available Routes:<br/>'
         f'<br/>'
         f'/api/v1.0/precipitation<br/>'
-        f'- List of dates and percipitation observations from the last year<br/>'
+        f'- Last year dates and percipitation observations<br/>'
         f'<br/>'
         f'/api/v1.0/stations<br/>'
-        f'- List of stations from the dataset<br/>'
+        f'- Stations from the dataset<br/>'
         f'<br/>'
         f'/api/v1.0/tobs<br/>'
-        f'- List of Temperature Observations (tobs) for the previous year<br/>'
+        f'- Previous year temperature observations (tobs)<br/>'
         f'<br/>'
         f'/api/v1.0/start<br/>'
-        f'- List of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range<br/>'
+        f'- List of the Min temperature, the Avg temperature, and the Max temperature for given start or start-end range<br/>'
         f'<br/>'
         f'/api/v1.0/start/end<br/>'
-        f'- List of the minimum temperature, the average temperature, and the max temperature for a given start or start-end range, inclusive<br/>'
+        f'- Min temperature, the Avg temperature, and the Max temperature for given start or start-end range<br/>'
     )
 # Return the query results as a dictionary, with date as the key and prcp as the value.
 @app.route('/api/v1.0/precipitation')
@@ -94,7 +94,6 @@ def end(start, end):
     trip = list(np.ravel(trip_data))
     return jsonify(trip)
 if __name__ == '__main__':
-    app.run(debug=True)
-
+    app.run(host ='127.0.0.1', port ='5000')
 
 
