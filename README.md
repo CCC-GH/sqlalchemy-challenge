@@ -31,7 +31,7 @@ Use Python and SQLAlchemy to do basic climate analysis and data exploration of y
 * Design a query to retrieve the last 12 months of temperature observation data (TOBS).
   * Flter by the station with the highest number of observations.
   * Plot the results as a histogram with `bins=12`.
-- - -
+
 ### Step 2 - Climate App (FlaskAPI.py)
 Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
 * Use Flask to create your routes.
