@@ -1,10 +1,12 @@
 ## 10-SQLAlchemy Homework 
 ![](smaller_surfs-up.png)
 ## SQLAlchemy-Challenge 
- * **Scripts** - ***sqlalchemy_jupyter.ipynb*** or ***sqlalchemy_spyder.py***, and ***sqlaschemy_FlaskAPI.py*** 
+ * **Scripts** - ***sqlalchemy_jupyter.ipynb*** or ***sqlalchemy_spyder.py***
  * **Input file** - located within Resources folder, hawaii.sqlite
  * **Output images** - within data analysis [output](/output) folder
  * **Assignment material** - located within [HW](/HW) folder.
+
+## Step 1 - Climate Analysis and Exploration (sqlalchemy_jupyter.ipynb or sqlalchemy_spyder.py)
 
 Use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 * Use the provided [starter notebook](\HW\Instructions\) and [hawaii.sqlite](Resources/) files to complete your climate analysis and data exploration.
@@ -30,7 +32,7 @@ Use Python and SQLAlchemy to do basic climate analysis and data exploration of y
   * Flter by the station with the highest number of observations.
   * Plot the results as a histogram with `bins=12`.
 - - -
-## Step 2 - Climate App
+## Step 2 - Climate App (FlaskAPI.py)
 Now that you have completed your initial analysis, design a Flask API based on the queries that you have just developed.
 * Use Flask to create your routes.
 
