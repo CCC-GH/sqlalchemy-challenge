@@ -6,7 +6,7 @@
  * **Output images** - within data analysis [output](/output) folder
  * **Assignment material** - located within [HW](/HW) folder.
 
-### Step 1 - Climate Analysis and Exploration (sqlalchemy_jupyter.ipynb or sqlalchemy_spyder.py)
+#### Step 1 - Climate Analysis and Exploration (sqlalchemy_jupyter.ipynb or sqlalchemy_spyder.py)
 
 Use Python and SQLAlchemy to do basic climate analysis and data exploration of your climate database. All of the following analysis should be completed using SQLAlchemy ORM queries, Pandas, and Matplotlib.
 * Use the provided [starter notebook](\HW\Instructions\) and [hawaii.sqlite](Resources/) files to complete your climate analysis and data exploration.
